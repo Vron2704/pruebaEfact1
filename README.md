@@ -28,6 +28,6 @@ La aplicación permite visualizar:
 Node.js (https://nodejs.org/)
 Angular CLI (https://github.com/angular/angular-cli)
 
-## Ejecución en Desarrollo
+## Ejecución
 
 ng serve --proxy-config proxy.conf.json
