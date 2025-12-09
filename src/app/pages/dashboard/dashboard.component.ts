@@ -66,12 +66,10 @@ export class DashboardComponent implements OnInit {
   cdrContent: string = '';
 
   ngOnInit() {
-    // Cargamos el PDF por defecto al entrar
     this.loadDocument('pdf');
   }
 
   onTabChange(event: any) {
-    // Índices de las pestañas: 0=PDF, 1=XML, 2=CDR
     if (event.index === 0 && !this.pdfUrl) this.loadDocument('pdf');
     if (event.index === 1 && !this.xmlContent) this.loadDocument('xml');
     if (event.index === 2 && !this.cdrContent) this.loadDocument('cdr');
@@ -87,11 +85,9 @@ export class DashboardComponent implements OnInit {
     this.api.getDocument(type, token).subscribe({
       next: (blob) => {
         if (type === 'pdf') {
-          // Crear una URL segura para el iframe
           const url = URL.createObjectURL(blob);
           this.pdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
         } else {
-          // Para XML y CDR, convertimos el Blob a texto para mostrarlo
           const reader = new FileReader();
           reader.onload = () => {
             if (type === 'xml') this.xmlContent = reader.result as string;

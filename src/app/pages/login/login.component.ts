@@ -50,18 +50,14 @@ import { MatButtonModule } from '@angular/material/button';
 export class LoginComponent {
   private api = inject(ApiService);
   private router = inject(Router);
-
-  // Valores por defecto del PDF para probar rápido [cite: 18, 20]
   username = '20111193035';
   password = '61a77b6fda77c3a2d6b28930546c86d7f749ccf0bd4bad1e1192f13bb59f0f30';
   loading = false;
   error = '';
-
   onLogin() {
     this.loading = true;
     this.api.login(this.username, this.password).subscribe({
       next: (res) => {
-        // Guardamos el token en localStorage
         localStorage.setItem('token', res.access_token);
         this.router.navigate(['/dashboard']);
       },

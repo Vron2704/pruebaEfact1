@@ -1,59 +1,33 @@
-# EfactPrueba
+# Efact prueba tecnica
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
+Esta aplicación es una prueba técnica desarrollada en *Angular* que aplica lo requerido en el documento recepcionado para la convocatoria que consiste en la visualización de Facturas/Boletas de EFACT.
 
-## Development server
+La aplicación permite visualizar:
+- El PDF del comprobante.
+- El XML firmado.
+- La Constancia de Recepción (CDR).
 
-To start a local development server, run:
+## Características Principales
 
-```bash
-ng serve
-```
+* **Autenticación OAuth2**: Login seguro contra la API de EFACT (`odin-dev.efact.pe`) obteniendo un token de acceso.
+* **Proxy Inverso**: Configuración de proxy para evitar problemas de CORS durante el desarrollo local.
+* **Dashboard Interactivo**: Interfaz con pestañas (Tabs) para navegar entre los diferentes formatos del documento.
+* **Visualización de Archivos**:
+    * Renderizado de PDF en un `iframe`.
+    * Visualización de código XML y CDR en bloques de texto formateados.
+* **Angular Material**: Interfaz de usuario moderna y responsiva.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Tecnologías Utilizadas
 
-## Code scaffolding
+* **Framework**: Angular 19+
+* **UI**: Angular Material (Toolbar, Card, Tabs, Inputs, Buttons)
+* **Estilos**: SCSS y CSS estándar.
+* **HTTP**: `HttpClient` con interceptores y manejo de `Blobs` para archivos.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Pre-requisitos
+Node.js (https://nodejs.org/)
+Angular CLI (https://github.com/angular/angular-cli)
 
-```bash
-ng generate component component-name
-```
+## Ejecución en Desarrollo
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+ng serve --proxy-config proxy.conf.json
