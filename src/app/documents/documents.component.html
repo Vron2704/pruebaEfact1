@@ -1,0 +1,11 @@
+<h2>Documentos</h2>
+<button (click)="load()">Cargar documentos</button>
+
+<h3>XML</h3>
+<pre>{{ xml }}</pre>
+
+<h3>PDF</h3>
+<iframe *ngIf="pdfUrl" [src]="pdfUrl" width="600" height="400"></iframe>
+
+<h3>CDR</h3>
+<a *ngIf="cdrUrl" [href]="cdrUrl" download="cdr.xml">Descargar CDR</a>
