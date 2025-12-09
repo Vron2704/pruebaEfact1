@@ -27,7 +27,7 @@ export class ApiService {
     // El PDF muestra este header Basic en el curl [cite: 29]
     // "Y2xpZW50OnNLY3JldA==" es "client:secret" en base64
     const headers = new HttpHeaders({
-      'Authorization': 'Basic Y2xpZW50OnNLY3JldA==',
+      'Authorization': 'Basic Y2xpZW50OnNlY3JldA==',
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 
